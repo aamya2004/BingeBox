@@ -6,7 +6,7 @@ import {
   HiPlayCircle,
   HiTv,
 } from "react-icons/hi2";
-
+import { Link, NavLink } from 'react-router-dom';
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
 
@@ -16,31 +16,37 @@ const Header = () => {
     {
       name: "HOME",
       icon: HiHome,
+      path: "/",
     },
     {
       name: "SEARCH",
       icon: HiMagnifyingGlass,
+      path: "/Search",
     },
     {
       name: "WATCH LIST",
       icon: HiPlus,
+      path: "/",
     },
     {
       name: "ORIGINALS",
       icon: HiStar,
+      path: "/",
     },
     {
       name: "MOVIES",
       icon: HiPlayCircle,
+      path: "/",
     },
     {
       name: "SERIES",
       icon: HiTv,
+      path: "/",
     },
   ];
 
   return (
-    <div className="flex items-center gap-8 p-5 justify-between ">
+    <div className="flex items-center gap-8 p-5 justify-between w-full ">
       <div className="flex gap-8 items-center">
         <img
           src="src/assets/logo.png"
@@ -48,8 +54,9 @@ const Header = () => {
         />
         <div className=" hidden md:flex gap-8">
           {menu.map((item) => (
-            <HeaderItem name={item.name} Icon={item.icon} />
-          ))}
+            <HeaderItem name={item.name} Icon={item.icon} path={item.path}  />  
+          )
+          )}
         </div>
 
         <div className="flex  md:hidden gap-8">

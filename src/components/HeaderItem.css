@@ -1,0 +1,8 @@
+.active{
+    color: white;
+    font-size: 18px;
+    text-decoration: underline;
+    transition: all;
+    animation-duration: 110;
+    transition-timing-function: ease-in;;
+}
