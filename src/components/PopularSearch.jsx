@@ -1,23 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-import GlobalApi from "../Services/GlobalApi";
+import { useState } from "react";
 import MovieTooltip from "./MovieTooltip";
-const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-const PopularSearch = ({popularSearch}) => {
-  const [isHover , setIsHover] = useState(""); //id
+const PopularSearch = ({ popularSearch }) => {
+  const [isHover, setIsHover] = useState(); //id
 
   return (
-  
-     <div className="text-white flex flex-wrap justify-around  max-w-[90vw]">
-     
-  
 
-      {popularSearch.map((item, index) => (
-        <MovieTooltip key={item.id} id={index} item={item.original_title} isShown ={true} setIsHover={setIsHover} />
-      ))}
-      
+    <div className="text-white flex justify-center w-full max-w-[100vw]">
+      <div className="flex max-w-[90vw] justify-around flex-wrap">
+        {
+          popularSearch.map((item, index) => {
+            if (isHover === index) {
+              return <MovieTooltip key={item.id} id={index} item={item} isShown={true} setIsHover={setIsHover} />;
+            } else {
+              return <MovieTooltip key={item.id} id={index} item={item} isShown={false} setIsHover={setIsHover} />;
+            }
+          })
+        }
+      </div>
     </div>
   )
 };
 
-export default PopularSearch;
+export default PopularSearch;
