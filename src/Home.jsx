@@ -1,8 +1,8 @@
-import React from 'react'
-import Header from './components/Header'
-import Slider from './components/Slider'
-import ProductionHouse from './components/ProductionHouse'
-import GenreMovieList from './components/GenreMovieList'
+import React from "react";
+import Header from "./components/Header";
+import Slider from "./components/Slider";
+import ProductionHouse from "./components/ProductionHouse";
+import GenreMovieList from "./components/GenreMovieList";
 import { NavLink, Outlet } from "react-router-dom";
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <ProductionHouse />
       <GenreMovieList />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

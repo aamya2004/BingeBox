@@ -1,10 +1,13 @@
 import React from "react";
-import GenresList from "../Constants/GenresList";
 import MovieList from "./MovieList";
 
-const GenreMovieList = () => {
+const GenreMovies = ({ id, item, isShown, setIsHover }) => {
   return (
-    <div>
+    <div
+      className="w-fit flex flex-col relative"
+      onMouseEnter={() => setIsHover(id)}
+      onMouseLeave={() => setIsHover("")}
+    >
       {GenresList.genere.map(
         (item, index) =>
           index <= 4 && (
@@ -18,4 +21,4 @@ const GenreMovieList = () => {
   );
 };
 
-export default GenreMovieList;
+export default GenreMovies;

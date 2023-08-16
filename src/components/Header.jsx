@@ -26,7 +26,7 @@ const Header = () => {
     {
       name: "WATCH LIST",
       icon: HiPlus,
-      path: "/",
+      path: "/WatchList",
     },
     {
       name: "ORIGINALS",
