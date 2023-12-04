@@ -13,7 +13,7 @@ const Slider = () => {
 
     const getTrendingVideos = () =>{
         GlobalApi.getTrendingVideos.then(resp=>{
-            console.log(resp.data.results);
+            // console.log(resp.data.results);
             setMovieList(resp.data.results);
         })
     }
@@ -39,7 +39,7 @@ const Slider = () => {
         
         <img src={IMAGE_BASE_URL + item.backdrop_path} 
         className='min-w-full md:h-[400px] object-cover object-left-top
-        mr-5 rounded-md hover:border-[2px] border-gray-400 transition-all duration-100 ease-in  '/>
+        mr-5 rounded-md hover:border-[2px] border-yellow-600 transition-all duration-100 ease-in  '/>
         ))}
     </div>
     </div>

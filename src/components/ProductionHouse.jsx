@@ -33,7 +33,7 @@ const ProductionHouse = () => {
     <div className='flex gap-2 md:gap-5 py-2 px-5 md:px-16'>
         {ProductionHouseList.map((item) =>(
             <div className='border-[2px] border-gray-600 rounded-lg
-            hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer
+            hover:scale-110 hover:border-[2px] hover:border-yellow-600 transition-all duration-300 ease-in-out cursor-pointer
             relative shadow-xl shadow-black
             '>
                 <video src={item.video} autoPlay loop playsInline

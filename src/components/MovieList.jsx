@@ -20,10 +20,22 @@ const MovieList = ({ genreId, index_ }) => {
     getMovieByGenreId();
   }, []);
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
   const getMovieByGenreId = () => {
     GlobalApi.getMovieByGenreId(genreId).then((resp) => {
       setMovieLis(resp.data.results);
-      console.log(resp.data.results);
+      shuffleArray(resp.data.results);
+      // console.log(resp.data.results);
     });
   };
   return (

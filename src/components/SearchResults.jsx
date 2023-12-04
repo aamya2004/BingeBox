@@ -17,7 +17,7 @@ const SearchResults = () => {
       .get(
         `${movieBaseUrl}/search/multi?query=${query}&include_adult=false&language=en-US&page=1&api_key=${api_key}`
       )
-      .then((resp) => console.log(resp.data));
+      // .then((resp) => console.log(resp.data));
   };
 
   return (
